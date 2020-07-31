@@ -9,7 +9,7 @@ upstream weechat {
 
 server {
   listen 80;
-  server_name ${fqdn};
+  server_name weechat.${fqdn};
 
 
   location /weechat {

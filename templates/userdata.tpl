@@ -28,6 +28,8 @@ cat <<'EOF' >> /home/ubuntu/.ssh/weechat_config_deploy_private_key
 ${weechat_config_deploy_private_key}
 EOF
 
+chmod 600 /home/ubuntu/.ssh/weechat_config_deploy_private_key
+
 rm /etc/nginx/sites-enabled/default
 ln -s /etc/nginx/sites-available/weechat /etc/nginx/sites-enabled/default
 
