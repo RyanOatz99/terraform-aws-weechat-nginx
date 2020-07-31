@@ -6,8 +6,8 @@ variable subnet_id {
   description = "The subnet id"
 }
 
-variable weechat_config_repository_name {
-  description = "the github repository name"
+variable weechat_config_repository_source {
+  description = "the repository source i.e. git@git.host.com/user/repo.git"
   type = string
 }
 

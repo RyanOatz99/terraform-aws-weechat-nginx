@@ -16,9 +16,6 @@ data "template_file" "nginx_config" {
 data "template_file" "weechat_env" {
   template = "${file("${path.module}/templates/weechat_env.tpl")}"
   vars = {
-    github_token = var.github_token
-    github_username = var.github_username
-    weechat_config_repo = var.weechat_config_repository_name
     relay_password = var.relay_password
   }
 }
@@ -31,6 +28,7 @@ data "template_file" "userdata" {
     weechat_env_file_path = var.weechat_env_file_path
     weechat_env = data.template_file.weechat_env.rendered
     weechat_config_deploy_private_key = "${file("${var.weechat_config_deploy_private_key_path}")}"
+    repository_address = var.weechat_config_repository_source
   }
 }
 

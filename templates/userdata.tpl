@@ -32,7 +32,7 @@ rm /etc/nginx/sites-enabled/default
 ln -s /etc/nginx/sites-available/weechat /etc/nginx/sites-enabled/default
 
 export $(cat ${weechat_env_file_path} | xargs)
-git clone https://x-access-token:$GITHUB_TOKEN@github.com/$GITHUB_USER/$GITHUB_REPOSITORY /home/weechat/.weechat
+ssh-agent bash -c 'ssh-add /home/ubuntu/.ssh/weechat_config_deploy_private_key; git clone ${repository_address}'
 chown -R weechat:weechat /home/weechat
 
 systemctl start weechat.service
