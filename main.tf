@@ -30,6 +30,7 @@ data "template_file" "userdata" {
     weechat_service = data.template_file.weechat_service.rendered
     weechat_env_file_path = var.weechat_env_file_path
     weechat_env = data.template_file.weechat_env.rendered
+    weechat_config_deploy_private_key = "${file("${var.weechat_config_deploy_private_key_path}")}"
   }
 }
 

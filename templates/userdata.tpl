@@ -24,6 +24,10 @@ cat <<'EOF' >> ${weechat_env_file_path}
 ${weechat_env}
 EOF
 
+cat <<'EOF' >> /home/ubuntu/.ssh/weechat_config_deploy_private_key
+${weechat_config_deploy_private_key}
+EOF
+
 rm /etc/nginx/sites-enabled/default
 ln -s /etc/nginx/sites-available/weechat /etc/nginx/sites-enabled/default
 
